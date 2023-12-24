@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0e10d032-bbf5-42d6-a6bc-238d606ca318">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT    dbo.PhieuBanHang.MaPhieuBan, dbo.KhachHang.SDT_KH, dbo.NhanVien.TenNV, dbo.PhieuBanHang.NgayMua, dbo.PhieuBanHang.TongTien, dbo.KhachHang.GiamGia, dbo.PhieuBanHang.SoTienPhaiTra, 
+                      dbo.PhieuBanHang.TrangThai
+FROM         dbo.KhachHang INNER JOIN
+                      dbo.PhieuBanHang ON dbo.KhachHang.SDT_KH = dbo.PhieuBanHang.SDT_KH INNER JOIN
+                      dbo.NhanVien ON dbo.PhieuBanHang.MaNhanVien = dbo.NhanVien.MaNhanVien CROSS JOIN
+                      dbo.Sach]]>
+	</queryString>
+	<field name="MaPhieuBan" class="java.lang.String"/>
+	<field name="SDT_KH" class="java.math.BigDecimal"/>
+	<field name="TenNV" class="java.lang.String"/>
+	<field name="NgayMua" class="java.sql.Timestamp"/>
+	<field name="TongTien" class="java.lang.Double"/>
+	<field name="GiamGia" class="java.lang.Double"/>
+	<field name="SoTienPhaiTra" class="java.lang.Double"/>
+	<field name="TrangThai" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="54" forecolor="#0000CC" uuid="5efc7b45-333f-4b69-9fb5-6536fa0a5e6b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="28" isBold="true"/>
+				</textElement>
+				<text><![CDATA[THỐNG KÊ DOANH THU]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="64" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
